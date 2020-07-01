@@ -114,8 +114,8 @@ server.get('/weather', (req, res) => {
         if (error){
             //console.log(chalk.red(error))
             return res.send({
-                error: 'Unable to correctly communicate with the forecast service!',
-                errorMessage: error
+                error: error,
+                errorMessage: 'Unable to correctly communicate with the forecast service!'
             })
             
         } else {

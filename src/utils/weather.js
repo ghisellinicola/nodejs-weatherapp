@@ -63,7 +63,7 @@ const weather = (location, callback) => {
 
         } else {
 
-            console.ùlog(body)
+            // console.log(body)
 
             const description = body.weather[0].main
             const degrees = body.main.temp

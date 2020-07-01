@@ -35,6 +35,9 @@ weatherForm.addEventListener('submit', (e) => {
 
     console.log('Location: ' + location)
 
+    errorMsg.textContent = 'Loading data for: ' + location + '.....'
+    forecastMsg.textContent = ''
+
     fetch('/weather?location=' + location).then((response) => {
         
     response.json().then((data) => {
@@ -43,8 +46,8 @@ weatherForm.addEventListener('submit', (e) => {
                 console.log(data.error)
             } else {
                 console.log(data.description)
-                console.log(data.value)
                 // forecastMsg.textContent = data.forecast + ' ' + data.degrees + ' ' + data.rain_perc
+                errorMsg.textContent = ''
                 forecastMsg.textContent = data.description
                 // console.log(data.degrees)
                 // console.log(data.forecast)

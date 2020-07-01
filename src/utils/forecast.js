@@ -10,7 +10,7 @@ const getWeather = (city, callback ) => {
     // } 
     geo_utils.geocode(city, (error, { latitude, longitude, location } ) => { 
         if (error) {
-            //console.log(chalk.red('Error: ' + error))
+            console.log(chalk.red('Error: ' + error))
             callback(error,undefined)
         }
         // if (geolocation_data) {
@@ -18,13 +18,13 @@ const getWeather = (city, callback ) => {
 
         // ------------------------------------------------
 
-        if (location !== undefined && latitude !== undefined && longitude !== undefined){
+        if (!error && location !== undefined && latitude !== undefined && longitude !== undefined){
 
             // weather_utils.weather({ latitude, longitude, location }, (error,{description, degrees, rain_perc}) => {
             weather_utils.weather({ latitude, longitude, location }, (error, forecast) => {
 
                 if (error) {
-                    //console.log(chalk.red('Error: ' + error)) 
+                    console.log(chalk.red('Error: ' + error)) 
                     callback(error,undefined)
                 } else {
                     // console.log(chalk.gray('Data: ' + description + ', ' + degrees + ', ' + rain_perc))
