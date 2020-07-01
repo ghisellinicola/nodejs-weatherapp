@@ -1,0 +1,45 @@
+<!--html with some features to inject code-->
+
+{{!-- <!DOCTYPE html> --}}
+
+<html>
+ 
+    <head>
+
+        <title>Weather</title>
+        {{>css}}
+
+    </head>
+
+    <body>
+
+        <div class="main-content">
+            {{!-- css flexbox technique --}}
+
+            {{!-- loading a partial - IMPORTANT! NO SPACES! --}}
+            {{>header}} 
+
+
+            <p> Use this to get your weather! </p>
+
+            <form>
+                <input placeholder="Location">
+                <button>Search</button>
+            </form>
+
+            {{!-- Error --}}
+            <p id="error"></p>
+
+            {{!-- Forecast --}}
+            <p id="forecast"></p>
+
+        </div>
+        
+        {{>footer}}
+
+        
+        {{>js}}
+
+    </body>
+
+</html>

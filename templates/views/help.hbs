@@ -1,0 +1,29 @@
+<!--html with some features to inject code-->
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Help</title>
+        {{>css}}
+
+    </head>
+
+    <body>
+
+        <div class="main-content">
+            {{!-- loading a partial - IMPORTANT! NO SPACES! --}}
+            {{>header}} 
+
+            {{!-- <h1> {{ description }} </h1> --}}
+
+            <p> For issues contact {{ admin }} at the following email address {{email}}  </p>
+                
+            </div>       
+        {{>footer}}
+
+    </body>
+
+</html>

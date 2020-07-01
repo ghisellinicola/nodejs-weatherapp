@@ -1,0 +1,60 @@
+body{
+    color: #333333;
+    font-family: arial;
+    /* alignment */
+    max-width: 650px;
+    margin: 0 auto; /*0 top&bottom - auto left&right*/
+    padding: 0 16px;
+
+    /* to push the footer at the end of the page! */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /*viewport height*/
+}
+
+.main-content {
+    flex-grow: 1; /*flex can take all the needed space*/
+}
+
+footer{
+    /* background: rgb(46, 126, 179); */
+    padding: 16px 0;
+    margin-top: 16px;
+    color: #888888;
+    border-top: 1px solid #eeeeee;
+}
+
+header{
+    margin-top:16px;
+    margin-bottom:48px;
+}
+
+h1 {
+    font-size: 64px;
+    color: blue;
+}
+
+header a{
+    color: #888888;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+ .about {
+    width: 300px; /*adjust all the images on the website proportionally*/
+    /* height: 200px; */
+}
+
+input {
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: #888888;
+    color: white;
+    padding: 8px;
+
+}
