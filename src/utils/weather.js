@@ -63,12 +63,18 @@ const weather = (location, callback) => {
 
         } else {
 
+            console.ùlog(body)
+
             const description = body.weather[0].main
             const degrees = body.main.temp
             const rain_perc = body.clouds.all
+
+            const feels = body.main.feels_like
+            const temp_min = body.main.temp_min
+            const temp_max = body.main.temp_max
             
             console.log(chalk.blue(chalk.green.bold(description) + '. There are currently ' + chalk.green.bold(degrees+ ' °C') + ' out. There is a ' + chalk.green.bold(rain_perc+ ' %') + ' chance of rain.'))
-            const forecast =  'It is ' + description + '. There are currently ' + degrees + ' °C' + ' out. There is a ' + rain_perc + ' %' + ' chance of rain.'
+            const forecast =  'It is ' + description + '. There are currently ' + degrees + ' °C' + ' out. That temperature feels like ' + feels + ' °C.' + 'Temperatures for the day will be included between ' + temp_min + ' °C and ' + temp_max + ' °C. ' + 'There is a ' + rain_perc + ' %' + ' chance of rain.'
             callback(undefined, forecast)
             // callback(undefined,{ description, degrees, rain_perc })
         }
