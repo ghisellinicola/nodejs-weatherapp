@@ -119,12 +119,14 @@ server.get('/weather', (req, res) => {
             })
             
         } else {
-            console.log(chalk.yellow(JSON.stringify(forecast)))
+            // console.log(chalk.yellow(JSON.stringify(forecast)))
+            console.log(chalk.yellow(forecast))
             return res.send({
-                location: req.query.location,
-                forecast: forecast.description,
-                degrees: forecast.degrees,
-                rain_perc: forecast.rain_perc
+                // location: req.query.location,
+                // forecast: forecast.description,
+                // degrees: forecast.degrees,
+                // rain_perc: forecast.rain_perc
+                description: forecast
             })
         }
     })    

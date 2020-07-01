@@ -42,10 +42,13 @@ weatherForm.addEventListener('submit', (e) => {
                 errorMsg.textContent = data.error
                 console.log(data.error)
             } else {
-                forecastMsg.textContent = data.forecast + ' ' + data.degrees + ' ' + data.rain_perc
-                console.log(data.degrees)
-                console.log(data.forecast)
-                console.log(data.rain_perc)
+                console.log(data.description)
+                console.log(data.value)
+                // forecastMsg.textContent = data.forecast + ' ' + data.degrees + ' ' + data.rain_perc
+                forecastMsg.textContent = data.description
+                // console.log(data.degrees)
+                // console.log(data.forecast)
+                // console.log(data.rain_perc)
             }
         })
     })

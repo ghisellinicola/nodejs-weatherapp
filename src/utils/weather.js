@@ -58,7 +58,8 @@ const weather = (location, callback) => {
 
             console.log(chalk.red('Unable to find ' + location.location + '!'))
             console.log(chalk.gray(JSON.stringify(body)))
-            callback(JSON.stringify(body),{undefined,undefined,undefined})
+            // callback(JSON.stringify(body),{undefined,undefined,undefined})
+            callback(JSON.stringify(body),undefined)
 
         } else {
 
@@ -67,8 +68,9 @@ const weather = (location, callback) => {
             const rain_perc = body.clouds.all
             
             console.log(chalk.blue(chalk.green.bold(description) + '. There are currently ' + chalk.green.bold(degrees+ ' °C') + ' out. There is a ' + chalk.green.bold(rain_perc+ ' %') + ' chance of rain.'))
-            //callback(undefined, '' + description+ '. There are currently ' + degrees + ' °C' + ' out. There is a ' + rain_perc + ' %' + ' chance of rain.')
-            callback(undefined,{ description, degrees, rain_perc })
+            const forecast =  'It is ' + description + '. There are currently ' + degrees + ' °C' + ' out. There is a ' + rain_perc + ' %' + ' chance of rain.'
+            callback(undefined, forecast)
+            // callback(undefined,{ description, degrees, rain_perc })
         }
     })
 

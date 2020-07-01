@@ -20,15 +20,20 @@ const getWeather = (city, callback ) => {
 
         if (location !== undefined && latitude !== undefined && longitude !== undefined){
 
-            weather_utils.weather({ latitude, longitude, location }, (error,{description, degrees, rain_perc}) => {
+            // weather_utils.weather({ latitude, longitude, location }, (error,{description, degrees, rain_perc}) => {
+            weather_utils.weather({ latitude, longitude, location }, (error, forecast) => {
+
                 if (error) {
                     //console.log(chalk.red('Error: ' + error)) 
                     callback(error,undefined)
                 } else {
-                    console.log(chalk.gray('Data: ' + description + ', ' + degrees + ', ' + rain_perc))
-                    callback(undefined,{
-                        description, degrees, rain_perc
-                    })
+                    // console.log(chalk.gray('Data: ' + description + ', ' + degrees + ', ' + rain_perc))
+                    // callback(undefined,{
+                    //     description, degrees, rain_perc
+                    // })
+                    console.log(chalk.gray('Data: At ' + location + ', it is ' + forecast))
+                    const forecast_description = location + '. ' + forecast
+                    callback(undefined, forecast_description)
                 } 
             })
 
