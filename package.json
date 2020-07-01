@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js -e js,hbs,css,html"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +14,8 @@
     "hbs": "4.1.1",
     "request": "2.88.2",
     "chalk": "4.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
