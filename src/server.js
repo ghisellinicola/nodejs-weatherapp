@@ -1,13 +1,19 @@
 const express = require('express')
 const request =  require('request')
 const chalk = require('chalk')
-const geo_utils = require('../utils/geocode')
-const weather_utils = require('../utils/weather')
-const forecast_utils = require('../utils/forecast')
+const geo_utils = require('./utils/geocode')
+const weather_utils = require('./utils/weather')
+const forecast_utils = require('./utils/forecast')
 const path = require('path') //built-in
 
 const hbs = require('hbs') //hbs - plugin for express
 const { pathToFileURL } = require('url')
+
+// -------------------------------------------------------------------------
+
+// for heroku the port will change!
+// const port=3000
+const port = process.env.PORT || 3000
 
 // -------------------------------------------------------------------------
 
@@ -209,7 +215,7 @@ server.get('*', (req, res) => {
 
 // define on which port the server must listen
 
-const port=3000
+
 
 // start the server
 // listen(port, callback)
